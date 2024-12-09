@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hard to look</title>
+    <style>
+        /* 页面居中对齐 */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffffff;
+        }
+
+        /* 图片的共同样式 */
+        img {
+            max-width: 100%;
+            max-height: 80vh;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img id="image" src="page1_old_gd.png" alt="Image 1" onclick="switchImage()" />
+
+    <script>
+        // 图片数组，包含6张图片
+        var images = [
+            "page1_old_gd.png",
+            "page2_old_gd.png",
+            "page3_old_gd.png",
+            "page4_old_gd.png",
+            "page5_old_gd.png",
+            "page6_old_gd.png"
+        ];
+
+        // 当前图片的索引，初始为0
+        var currentIndex = 0;
+
+        // 切换图片的函数
+        function switchImage() {
+            // 如果当前是第六张图片，停止切换
+            if (currentIndex === images.length - 1) {
+                alert("You have reached the last image!");
+                return;
+            }
+
+            // 更新当前图片索引
+            currentIndex++;
+
+            // 获取图片元素并切换 src
+            var imageElement = document.getElementById("image");
+            imageElement.src = images[currentIndex];
+        }
+    </script>
+</body>
+</html>
